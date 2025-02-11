@@ -1,0 +1,269 @@
+<!-- 
+هذا الكود يضاف يدويا داخل الاكواد
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بطريقه شرعيه</title>
+    <link rel="stylesheet" href="vid style.css">
+
+</head>
+<body>
+<head>
+    <h2 class="title">بطريقه شرعيه<span> اليوتيوب </span>زياده عدد مشاهدات</h2>
+    <h3 class="titl">اضف الفيديو الخاص بك واستمتع بتجربه ممتازه</h3>
+</head>
+   
+  <div class="con">
+
+
+      <section class="in_con">
+        
+        <iframe id="youtube-video" 
+            src="https://www.youtube.com/embed/KNJ0XKv_v0A?autoplay=1&mute=1&loop=1&playlist=KNJ0XKv_v0A" 
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
+    
+      
+        <iframe id="youtube-video" 
+          src="https://www.youtube.com/embed/1WeVMnWqoqA?autoplay=1&mute=1&loop=1&playlist=1WeVMnWqoqA"
+          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>  
+
+        <iframe id="youtube-video" 
+        src="https://www.youtube.com/embed/oGeoi4iYAr4?autoplay=1&mute=1&loop=1&playlist=oGeoi4iYAr4" 
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
+    
+      
+        <iframe id="youtube-video" 
+          src="https://www.youtube.com/embed/1WeVMnWqoqA?autoplay=1&mute=1&loop=1&playlist=1WeVMnWqoqA"
+          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>  
+    
+      </section>
+  </div>
+</body>
+</html>
+
+ -->
+
+
+
+
+
+
+
+
+
+<!-- 
+ هذا الكود يضاف من خلال الرابط ولاكن عند تحميل الصفحه يمسح الفيديو
+
+ <!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بطريقة شرعية</title>
+    <link rel="stylesheet" href="vid style.css">
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .input-container {
+            margin: 20px 0;
+        }
+        input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            margin-left: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        iframe {
+            width: 300px;
+            height: 170px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 class="title">بطريقة شرعية<span> اليوتيوب </span>زيادة عدد المشاهدات</h2>
+    <h3 class="titl">أضف الفيديو الخاص بك واستمتع بتجربة ممتازة</h3>
+
+    <div class="container">
+        <div class="input-container">
+            <input type="text" id="video-url" placeholder="أدخل رابط فيديو يوتيوب">
+            <button onclick="addVideo()">إضافة الفيديو</button>
+        </div>
+
+        <div class="video-container" id="video-list">
+            <iframe src="https://www.youtube.com/embed/KNJ0XKv_v0A?autoplay=1&mute=1&loop=1&playlist=KNJ0XKv_v0A" 
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+            </iframe>
+
+            <iframe src="https://www.youtube.com/embed/1WeVMnWqoqA?autoplay=1&mute=1&loop=1&playlist=1WeVMnWqoqA"
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+            </iframe>
+
+            <iframe src="https://www.youtube.com/embed/oGeoi4iYAr4?autoplay=1&mute=1&loop=1&playlist=oGeoi4iYAr4" 
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        function addVideo() {
+            let urlInput = document.getElementById("video-url").value;
+            let videoList = document.getElementById("video-list");
+
+            // استخراج معرف الفيديو من رابط يوتيوب
+            let videoId = extractVideoID(urlInput);
+            if (!videoId) {
+                alert("الرجاء إدخال رابط صحيح لفيديو يوتيوب!");
+                return;
+            }
+
+            // إنشاء رابط التشغيل التلقائي والمكتوم
+            let embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}`;
+
+            // إنشاء عنصر iframe جديد
+            let iframe = document.createElement("iframe");
+            iframe.src = embedUrl;
+            iframe.frameBorder = "0";
+            iframe.allow = "autoplay; encrypted-media";
+            iframe.allowFullscreen = true;
+
+            // إضافة الفيديو إلى القائمة
+            videoList.appendChild(iframe);
+
+            // تفريغ خانة الإدخال
+            document.getElementById("video-url").value = "";
+        }
+
+        function extractVideoID(url) {
+            let match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:.*v=|.*\/|.*embed\/|.*shorts\/))([^?&]+)/);
+            return match ? match[1] : null;
+        }
+    </script>
+
+</body>
+</html> -->
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بطريقة شرعية</title>
+    <link rel="icon" href="youtube.png">
+    <link rel="stylesheet" href="vid style.css">
+   
+</head>
+<body>
+
+    <h2 class="title">زياده عدد مشاهدات<span> اليوتيوب </span>بطريقه شرعيه</h2>
+    <h3 class="titl">أضف الفيديو الخاص بك واستمتع بتجربة ممتازة</h3>
+
+    <div class="container">
+        <div class="input-container">
+            <input type="text" id="video-url" placeholder="أدخل رابط فيديو يوتيوب">
+            <button onclick="addVideo()">إضافة الفيديو</button>
+        </div>
+
+        <div class="video-container" id="video-list">
+            <iframe src="https://www.youtube.com/embed/oGeoi4iYAr4?autoplay=1&mute=1&loop=1&playlist=oGeoi4iYAr4" 
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", loadVideos);
+
+        function addVideo() {
+            let urlInput = document.getElementById("video-url").value;
+            let videoList = document.getElementById("video-list");
+
+            let videoId = extractVideoID(urlInput);
+            if (!videoId) {
+                alert("الرجاء إدخال رابط صحيح لفيديو يوتيوب!");
+                return;
+            }
+
+            let embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}`;
+
+            let iframe = document.createElement("iframe");
+            iframe.src = embedUrl;
+            iframe.frameBorder = "0";
+            iframe.allow = "autoplay; encrypted-media";
+            iframe.allowFullscreen = true;
+
+            videoList.appendChild(iframe);
+
+            saveVideo(embedUrl);
+
+            document.getElementById("video-url").value = "";
+        }
+
+        function extractVideoID(url) {
+            let match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:.*v=|.*\/|.*embed\/|.*shorts\/))([^?&]+)/);
+            return match ? match[1] : null;
+        }
+
+        function saveVideo(videoUrl) {
+            let videos = JSON.parse(localStorage.getItem("videos")) || [];
+            videos.push(videoUrl);
+            localStorage.setItem("videos", JSON.stringify(videos));
+        }
+
+        function loadVideos() {
+            let videos = JSON.parse(localStorage.getItem("videos")) || [];
+            let videoList = document.getElementById("video-list");
+
+            videos.forEach(videoUrl => {
+                let iframe = document.createElement("iframe");
+                iframe.src = videoUrl;
+                iframe.frameBorder = "0";
+                iframe.allow = "autoplay; encrypted-media";
+                iframe.allowFullscreen = true;
+
+                videoList.appendChild(iframe);
+            });
+        }
+    </script>
+
+</body>
+</html>
